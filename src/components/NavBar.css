@@ -1,0 +1,11 @@
+.navbar{
+    background-color: #72a27c;
+}
+.Banner-logo{
+    max-width: 10%;
+}
+#navbarNav{
+    font-size: 175%;
+    display: flex;
+    justify-content: space-between;
+}
