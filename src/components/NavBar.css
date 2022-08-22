@@ -1,8 +1,11 @@
 .navbar{
     background-color: #72a27c;
 }
-.Banner-logo{
+.banner-logo{
     max-width: 10%;
+}
+.banner-carrito{
+    max-width: 5%;
 }
 #navbarNav{
     font-size: 175%;
