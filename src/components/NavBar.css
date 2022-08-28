@@ -12,3 +12,10 @@
     display: flex;
     justify-content: space-between;
 }
+
+.itemCount{
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    gap: 15px;
+}

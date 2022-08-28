@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import carrito from './carrito.png';
 import './NavBar.css';
 
