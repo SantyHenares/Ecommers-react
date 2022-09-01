@@ -1,15 +1,15 @@
 import React from 'react'
 import './NavBar.css';
 
-const Item = ({ id, tittle, price, picture}) => {
+const Item = ({ id, title, price, pictureUrl}) => {
   return (
-    <div><div className="card">
-    <img src={picture} className="card-img-top" alt="Foto"/>
-    <div className="card-body">
-      <h5 className="card-title">{id}.{tittle}</h5>
-      <p className="card-text">{price}</p>
+    <div className="card">
+      <img src={pictureUrl} className="card-img-top" alt="Foto"/>
+      <div className="card-body">
+        <h5 className="card-title">{id}.{title}</h5>
+        <p className="card-text">${price}</p>
+      </div>
     </div>
-  </div></div>
   )
 }
 

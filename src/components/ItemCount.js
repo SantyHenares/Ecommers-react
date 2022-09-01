@@ -20,7 +20,6 @@ function ItemCount({stock, initial}) {
         alert(`Agregaste ${counter} objetos al carrito.`);
     };
 
-
     return (
         <div>
         <div className="App itemCount">

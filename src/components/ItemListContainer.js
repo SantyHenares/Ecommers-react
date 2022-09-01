@@ -4,9 +4,10 @@ import ItemList from './ItemList';
 
 const ItemListContainer = (prop) => {
   return (
-    <div>{prop.greeting}
+    <div>
+    {prop.greeting}
     <ItemList /> 
-    <ItemCount stock={10} initial={0}/>
+    <ItemCount stock={9} initial={0}/>
     </div>
   )
 }
