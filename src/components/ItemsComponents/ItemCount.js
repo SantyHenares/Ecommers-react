@@ -1,5 +1,5 @@
 import React from 'react';
-import './NavBar.css';
+import '../NavBar.css';
 
 function ItemCount({stock, initial}) {
     const [counter, setCounter] = React.useState(0);

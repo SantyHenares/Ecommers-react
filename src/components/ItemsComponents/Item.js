@@ -1,9 +1,9 @@
 import React from 'react'
-import './NavBar.css';
+import '../NavBar.css';
 
 const Item = ({ id, title, price, pictureUrl}) => {
   return (
-    <div className="card">
+    <div className="card border-success">
       <img src={pictureUrl} className="card-img-top" alt="Foto"/>
       <div className="card-body">
         <h5 className="card-title">{id}.{title}</h5>

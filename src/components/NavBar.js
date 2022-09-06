@@ -1,6 +1,6 @@
 import React from 'react';
 import './NavBar.css';
-import logo from './logo.jpeg';
+import logo from '../assets/logo.jpeg';
 import CartWidget from './CartWidget';
 
 
