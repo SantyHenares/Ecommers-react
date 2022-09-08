@@ -1,5 +1,5 @@
 import React from 'react'
-import '../NavBar.css';
+import './Item.css';
 
 const Item = ({ id, title, price, pictureUrl}) => {
   return (

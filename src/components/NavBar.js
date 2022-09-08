@@ -2,7 +2,7 @@ import React from 'react';
 import './NavBar.css';
 import logo from '../assets/logo.jpeg';
 import CartWidget from './CartWidget';
-
+import { Link } from 'react-router-dom';
 
 function NavBar() {
     return (
@@ -12,13 +12,13 @@ function NavBar() {
                     <img src={logo} className="banner-logo" alt="logo" /> 
                     <ul className="navbar-nav">
                         <li className="nav-item">
-                            <a className="nav-link active" aria-current="page" src="#">Home</a>
+                            <Link className="nav-link active" aria-current="page" to={`/`}>Home</Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link active" src="#">Productos</a>
+                            <Link className="nav-link active" to={`/category/electronics`}>Electrónica</Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link active" src="#">Contacto</a>
+                            <Link className="nav-link active" to={`/category/jewelery`}>Joyería</Link>
                         </li>
                     </ul>
                     <CartWidget />

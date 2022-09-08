@@ -11,7 +11,7 @@ const ItemDetail = ({data}) => {
         <div className="col-md-8">
           <div className="card-body">
             <h5 className="card-title">{data.id}.{data.title}</h5>
-            <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+            <p className="card-text">{data.description}</p>
             <p className="card-text">${data.price}</p>
             <ItemCount stock={9} initial={0}/>
           </div>
