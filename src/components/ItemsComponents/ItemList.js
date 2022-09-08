@@ -5,20 +5,19 @@ import { useParams } from 'react-router-dom';
 
 const ItemList = () => {
   const [items, setItem] = useState ([]);
-  const { categoryid } = useParams;
+  const { categoryid } = useParams();
 
   useEffect(() =>{
+
+    if(!categoryid){      
       fetch('https://fakestoreapi.com/products')
       .then((responsive) => responsive.json())
       .then((json) => setItem(json))
-    if(!categoryid){      
-
         }
     else{
       fetch('https://fakestoreapi.com/products')
       .then((responsive) => responsive.json())
-      .then((json) => setItem(json)) 
-      .then(items.filter(item => item.category === categoryid ))
+      .then((reps) => setItem(reps.filter(item => item.category === categoryid ))) 
     }
 
   }, [categoryid]);
