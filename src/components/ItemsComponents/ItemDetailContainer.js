@@ -9,10 +9,8 @@ const ItemDetailContainer = () => {
   let {id} = useParams();
 
   useEffect(() =>{
-    setTimeout(() => {
       axios(`https://fakestoreapi.com/products/${id}`)
       .then((res) => setItemDetail(res.data))
-    }, 2000);
   }, [id]);
 
   return (
