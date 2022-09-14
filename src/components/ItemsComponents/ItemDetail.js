@@ -3,10 +3,10 @@ import ItemCount from './ItemCount';
 import { Link } from 'react-router-dom';
 
 const ItemDetail = ({data}) => {
-  const [counter, setCounter] = React.useState(0);
+  const [toCart, setToCart] = React.useState(0);
 
   const onAdd = (quantityToAdd) => {
-    setCounter(quantityToAdd);
+    setToCart(quantityToAdd);
   };
 
   return (
@@ -20,7 +20,7 @@ const ItemDetail = ({data}) => {
             <h5 className="card-title">{data.id}.{data.title}</h5>
             <p className="card-text">{data.description}</p>
             <p className="card-text">${data.price}</p>
-            <ItemCount stock={9} initial={0} onAdd={onAdd}/>
+            {toCart === 0 ? <ItemCount stock={9} initial={0} onAdd={onAdd}/> : null}
           </div>
           <div className='d-flex justify-content-around mb-3'>
             <Link to={`/cart`} style={{textDecoration: 'none'}}>

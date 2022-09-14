@@ -23,7 +23,7 @@ function ItemCount({stock, initial, onAdd}) {
                 <p>{counter}</p>
                 <button onClick={handlerCounterUp} type="button" className="btn btn-dark">+</button>
             </div>
-            <button onClick={onAdd(counter)} type="button" className="btn btn-dark">Agregar</button>
+            <button onClick = { ( ) => onAdd(counter) } type="button" className="btn btn-dark">Agregar</button>
         </div>
       );
 }
