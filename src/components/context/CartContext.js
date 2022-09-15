@@ -1,11 +1,39 @@
-import React from 'react'
+import React, {createContext, useState, useContext} from 'react'
 
 export const CartContext = createContext([])
 
-const CartContext = () => {
+export const useCartContext = () => {
+  return useContext(CartContext)
+}
+
+const CartContextProvider = ({children}) => {
+  const [cartList, setCartList] = useState([])
+
+  const addItem = (item, quantity) => {
+    const idItem = cartList.findIndex(i => i.id === item.id)
+
+    if(idItem === -1){
+      setCartList([...cartList, { ...item, cantidad: quantity}])
+    } else{
+      const cantidadActual = cartList[idItem].cantidad;
+      cartList.splice(idItem, 1);
+      setCartList([...cartList, {...item, cantidad: item.cantidad+cantidadActual}]);
+    }
+  }
+
+  const removeItems = (id) => {
+		setCartList(cartList.filter((item) => item.id !== id))
+	}
+
+  const clear = () => {
+    setCartList([])
+  }
+
   return (
-    <div>CartContext</div>
+    <CartContext.Provider value={{addItem, removeItems, clear}}>
+      {children}
+    </CartContext.Provider>
   )
 }
 
-export default CartContext
+export default CartContextProvider

@@ -4,26 +4,14 @@ import './Item.css';
 function ItemCount({stock, initial, onAdd}) {
     const [counter, setCounter] = React.useState(0);
 
-    const handlerCounterUp = () => {
-        if(counter<stock){
-            setCounter(counter + 1);
-        }
-    };
-
-    const handlerCounterDown = () => {
-        if(initial<counter){
-            setCounter(counter - 1);
-        }
-    };
-
     return (
         <div>
             <div className="App itemCount">
-                <button onClick={handlerCounterDown} type="button" className="btn btn-dark">-</button>
+                <button onClick={() => setCounter(counter - 1)} disabled={counter === initial} type="button" className="btn btn-dark">-</button>
                 <p>{counter}</p>
-                <button onClick={handlerCounterUp} type="button" className="btn btn-dark">+</button>
+                <button onClick={() => setCounter(counter + 1)} disabled={counter === stock} type="button" className="btn btn-dark">+</button>
             </div>
-            <button onClick = { ( ) => onAdd(counter) } type="button" className="btn btn-dark">Agregar</button>
+            <button onClick = { () => onAdd(counter) } type="button" className="btn btn-dark">Agregar</button>
         </div>
       );
 }
