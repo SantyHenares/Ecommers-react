@@ -4,7 +4,7 @@ import './NavBar.css';
 
 const CartWidget = () => {
   return (
-    <img src={carrito} className="banner-carrito" alt="carrito" /> 
+    <img src={carrito} className="banner-carrito" alt="carrito" />
   )
 }
 
