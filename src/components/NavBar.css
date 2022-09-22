@@ -5,10 +5,13 @@
     max-width: 10%;
 }
 .banner-carrito{
-    max-width: 5%;
+    max-width: 60px;
 }
 #navbarNav{
     font-size: 175%;
     display: flex;
     justify-content: space-between;
+}
+.widgetContainer{
+    max-width: 100px;
 }

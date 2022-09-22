@@ -21,7 +21,7 @@ function NavBar() {
                             <Link className="nav-link active" to={`/category/jewelery`}>Joyería</Link>
                         </li>
                     </ul>
-                    <CartWidget />
+                    <Link className="nav-link active" to={`/cart`}><CartWidget /></Link>
                 </div>
             </div>
         </nav>
