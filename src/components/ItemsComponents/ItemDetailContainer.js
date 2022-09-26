@@ -3,6 +3,7 @@ import ItemDetail from './ItemDetail';
 import './Item.css';
 import { useParams } from 'react-router';
 import axios from 'axios';
+import { collection, query, where, getDocs } from "firebase/firestore";
 
 const ItemDetailContainer = () => {
   const [itemDetails, setItemDetail] = useState ({});

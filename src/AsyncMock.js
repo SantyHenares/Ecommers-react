@@ -5,6 +5,7 @@ const productos = [
         price: '75',
         description: '',
         image: './assets/Remera1.jpeg',
+        category:'black',
     },
     {
         id:'2',
@@ -12,6 +13,7 @@ const productos = [
         price: '92',
         description: '',
         image: './assets/Remera2.jpeg',
+        category:'white',
     },    
     {
         id:'3',
@@ -19,6 +21,7 @@ const productos = [
         price: '48',
         description: '',
         image: './assets/Remera3.jpeg',
+        category:'black',
     },
     {
         id:'4',
@@ -26,6 +29,7 @@ const productos = [
         price: '37',
         description: '',
         image: './assets/Remera4.jpeg',
+        category:'white',
     },
     {
         id:'5',
@@ -33,6 +37,7 @@ const productos = [
         price: '98',
         description: '',
         image: './assets/Remera5.jpeg',
+        category:'black',
     },
     {
         id:'6',
@@ -40,6 +45,7 @@ const productos = [
         price: '76',
         description: '',
         image: './assets/Remera6.jpeg',
+        category:'white',
     },
     {
         id:'7',
@@ -47,5 +53,6 @@ const productos = [
         price: '51',
         description: '',
         image: './assets/Remera7.jpeg',
+        category:'white',
     }
 ]
