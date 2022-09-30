@@ -11,8 +11,20 @@ const ItemDetailContainer = () => {
   let {id} = useParams();
 
   useEffect(() =>{
-      axios(`https://fakestoreapi.com/products/${id}`)
-      .then((res) => setItemDetail(res.data))
+      // axios(`https://fakestoreapi.com/products/${id}`)
+      // .then((res) => setItemDetail(res.data))
+      const getClothes = async () => {
+        const q = query(
+          collection(db, 'Clothes', id)
+        );
+        const docs = [];
+        const querySnapshot = await getDocs(q);
+        querySnapshot.forEach((doc) => {
+          docs.push({ ...doc.data(), id: doc.id });
+        });
+        setItemDetail(docs);
+      };
+      getClothes();
   }, [id]);
 
   return (

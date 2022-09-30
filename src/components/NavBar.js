@@ -15,10 +15,10 @@ function NavBar() {
                             <Link className="nav-link active" aria-current="page" to={`/`}>Home</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link active" to={`/category/electronics`}>Electrónica</Link>
+                            <Link className="nav-link active" to={`/category/white`}>Remeras blancas</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link active" to={`/category/jewelery`}>Joyería</Link>
+                            <Link className="nav-link active" to={`/category/black`}>Remeras negras</Link>
                         </li>
                     </ul>
                     <Link className="nav-link active" to={`/cart`}><CartWidget /></Link>
