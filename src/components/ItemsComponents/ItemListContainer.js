@@ -10,10 +10,7 @@ const ItemListContainer = (prop) => {
 
   useEffect(() =>{
 
-    if(!categoryid){      
-      // fetch('https://fakestoreapi.com/products')
-      // .then((responsive) => responsive.json())
-      // .then((json) => setItem(json))
+    if(!categoryid){
       const getClothes = async () => {
         const q = query(
           collection(db, 'Clothes')
@@ -29,9 +26,6 @@ const ItemListContainer = (prop) => {
       getClothes();
         }
     else{
-      // fetch('https://fakestoreapi.com/products')
-      // .then((responsive) => responsive.json())
-      // .then((reps) => setItem(reps.filter(item => item.category === categoryid ))) 
       const getClothes = async () => {
         const q = query(
           collection(db, 'Clothes'), where('category', '==', categoryid)

@@ -17,7 +17,7 @@ const CartContextProvider = ({children}) => {
     } else{
       const cantidadActual = cartList[idItem].cantidad;
       cartList.splice(idItem, 1);
-      setCartList([...cartList, {...item, cantidad: item.cantidad+cantidadActual}]);
+      setCartList([...cartList, {...item, cantidad: quantity+cantidadActual}]);
     }
   }
 

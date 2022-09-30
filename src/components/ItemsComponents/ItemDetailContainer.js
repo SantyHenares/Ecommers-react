@@ -1,35 +1,29 @@
 import React, { useEffect, useState } from 'react'
 import ItemDetail from './ItemDetail';
+import Spinner from './Spinner';
 import './Item.css';
 import { useParams } from 'react-router';
-import axios from 'axios';
-import { collection, query, where, getDocs } from "firebase/firestore";
-import {db} from "../../firebase/firebaseConfig";
+import { doc, getFirestore, getDoc } from "firebase/firestore";
 
 const ItemDetailContainer = () => {
   const [itemDetails, setItemDetail] = useState ({});
+  const [loading, setLoading] = useState(true);
   let {id} = useParams();
 
   useEffect(() =>{
-      // axios(`https://fakestoreapi.com/products/${id}`)
-      // .then((res) => setItemDetail(res.data))
       const getClothes = async () => {
-        const q = query(
-          collection(db, 'Clothes', id)
-        );
-        const docs = [];
-        const querySnapshot = await getDocs(q);
-        querySnapshot.forEach((doc) => {
-          docs.push({ ...doc.data(), id: doc.id });
-        });
-        setItemDetail(docs);
+        const querydb = getFirestore();
+        const queryDoc = doc(querydb,"Clothes", id);
+        getDoc(queryDoc).then((res) =>
+          setItemDetail({id: res.id, ...res.data()})
+        ).finally(() => setLoading(false));
       };
       getClothes();
   }, [id]);
 
   return (
     <div className='cardContainer'>
-      <ItemDetail data={itemDetails}/>
+      {loading ? <Spinner/> : <ItemDetail data={itemDetails}/>}
     </div>
   )
 }
