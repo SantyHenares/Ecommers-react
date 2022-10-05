@@ -3,6 +3,7 @@ import ItemList from './ItemList';
 import { useParams } from 'react-router-dom';
 import { collection, query, where, getDocs } from "firebase/firestore";
 import {db} from "../../firebase/firebaseConfig";
+import Shop from "../Shop/Shop";
 
 const ItemListContainer = (prop) => {
   const [items, setItem] = useState ([]);
@@ -46,6 +47,7 @@ const ItemListContainer = (prop) => {
     <div>
     {prop.greeting}
     <ItemList items={items}/> 
+    <Shop/>
     </div>
   )
 }
