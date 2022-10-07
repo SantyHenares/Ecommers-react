@@ -1,23 +1,14 @@
 import React from 'react';
 import { useCartContext } from '../context/CartContext';
-import Swal from 'sweetalert2';
 import { Link } from 'react-router-dom';
 
 const Cart = () => {
   const {cartList, removeItems, totalPrice, clear, cantProd} = useCartContext();
 
-  const exito = () => {
-    clear();
-    Swal.fire(
-      'Felicitaciones',
-      'Su compra fue un exiro!',
-      'success'
-    )
-  }
   if(cantProd() === 0){
     return(
       <div>
-        <h1>No tienes nada en el carrito, vuelve a comprar.</h1>
+        <h1 className='py-5 my-5'>El carrito esta vacio.</h1>
         <Link to={`/`} style={{textDecoration: 'none'}}>
           <button type="button" className="btn btn-dark">Volver al home</button>
         </Link>
@@ -53,8 +44,8 @@ const Cart = () => {
         <h1><strong>Total: ${totalPrice()}.</strong></h1>
       </div>
       <div>
-        <button type="button" class="btn btn-dark m-4" onClick={() => exito()}>Finalizar Compra</button>
-        <button type="button" class="btn btn-dark m-4" onClick={() => clear()}>Limpiar carrito</button>
+        <Link to={`/checkout`}><button type="button" className="btn btn-dark m-4">Checkout</button></Link>
+        <button type="button" className="btn btn-dark m-4" onClick={() => clear()}>Limpiar carrito</button>
       </div>
     </div>
   )

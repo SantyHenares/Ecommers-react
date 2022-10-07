@@ -1,10 +1,11 @@
 import React, {useState} from 'react';
-import './Shop.css';
+import './Checkout.css';
 import * as yup from 'yup';
 import { Formik } from 'formik';
 import { collection, addDoc } from 'firebase/firestore';
 import { db } from '../../firebase/firebaseConfig';
 import { useCartContext } from '../../context/CartContext';
+import Swal from 'sweetalert2';
 
 const yupSchema = yup.object().shape({
     name: yup.string().required(),
@@ -13,9 +14,18 @@ const yupSchema = yup.object().shape({
 })
 .required();
 
-const Shop = () => {
-    const {cartList, totalPrice} = useCartContext();
+const Checkout = () => {
+    const {cartList, totalPrice, clear} = useCartContext();
     const [orderId, setOrderId] = useState(null);
+
+    const exito = () => {
+        clear();
+        Swal.fire(
+          'Felicitaciones',
+          'Su compra fue un exiro!',
+          'success'
+        )
+      }
     
     const submitHandler = (values, resetForm) => {
         resetForm();
@@ -32,6 +42,7 @@ const Shop = () => {
   return (
     <div className='container'>
         <h1>Check out</h1>
+        <p>Ingresa tus datos para finalizar la compra.</p>
         <Formik initialValues={{name:'', phone:'', email:'', }}
             onSubmit={(values, { resetForm }) => submitHandler(values, resetForm)}
             validationSchema={yupSchema}>
@@ -55,11 +66,11 @@ const Shop = () => {
                 <div className='contenedor-form d-flex justify-content-center'>
                     <input value={values.email} onChange={handleChange} onBlur={handleBlur} name='email' type="email" className="form-control" placeholder="E-mail" aria-label="E-mail"/>
                 </div>
-                <button type='submit' className='btn btn-dark'>Submit</button>
+                <button type='submit' onClick={() => exito()} className='btn btn-dark'>Finalizar compra</button>
             </form>)}
         </Formik>
     </div>
     )
 }
 
-export default Shop
+export default Checkout
