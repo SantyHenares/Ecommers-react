@@ -6,14 +6,14 @@ import { db } from '../../firebase/firebaseConfig';
 import { useCartContext } from '../../context/CartContext';
 
 const Checkout = () => {
-    const {cartList, totalPrice, clear} = useCartContext();
+    const {cartList, totalPrice} = useCartContext();
     const [orderId, setOrderId] = useState(null);
     
     const submitHandler = (values) => {
         const order = {
-            buyer: values,
+            buyer: {...values},
             items: cartList,
-            total: totalPrice
+            total: 300
         };
     
         const orderCollection = collection(db, "orders");

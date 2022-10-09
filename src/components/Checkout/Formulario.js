@@ -5,7 +5,7 @@ import * as Yup from 'yup';
 import { useCartContext } from '../../context/CartContext';
 import Swal from 'sweetalert2';
  
- const Formulario = ( submitHandler ) => {
+ const Formulario = ( {submitHandler} ) => {
   const { clear } = useCartContext();
 
   const exito = () => {
@@ -37,7 +37,7 @@ import Swal from 'sweetalert2';
          }, 400);
        }}
      >
-       <Form>
+       <Form className='m-5'>
         <h1>Check out</h1>
         <p>Ingresa tus datos para finalizar la compra.</p>
         <div className='contenedor-form d-flex justify-content-center'>
@@ -55,7 +55,7 @@ import Swal from 'sweetalert2';
             <ErrorMessage name="email" />
         </div>
          
-        <button type='submit'  onClick={() => exito()} className='btn btn-dark'>Finalizar compra</button>
+        <button type='submit'  onClick={() => exito()} className='btn btn-dark m-2'>Finalizar compra</button>
        </Form>
      </Formik>
    );
