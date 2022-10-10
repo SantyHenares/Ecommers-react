@@ -9,14 +9,12 @@ import Swal from 'sweetalert2';
   const { clear } = useCartContext();
 
   const exito = () => {
-    clear();
     Swal.fire(
       'Felicitaciones',
       'Su compra fue un exiro!',
       'success'
-    )
+    ).then( clear() )
   }
-
    return (
      <Formik
        initialValues={{ name: '', phone: '', email: '' }}

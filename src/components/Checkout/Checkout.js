@@ -12,13 +12,13 @@ const Checkout = () => {
     const submitHandler = (values) => {
         const order = {
             buyer: {...values},
-            items: cartList,
-            total: 300
+            items: [...cartList],
+            total: totalPrice()
         };
     
         const orderCollection = collection(db, "orders");
         addDoc(orderCollection, order).then(({id}) => setOrderId(id));
-        console.log(orderId);
+        console.log(totalPrice());
     }
 
   return (
