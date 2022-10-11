@@ -35,7 +35,8 @@ const Checkout = () => {
     }else{
         return(
             <div>
-                <h1 className='py-5 my-5'>¡Felicitaciones por su compra!</h1>
+                <h1 className='py-2 my-2'>¡Felicitaciones por su compra!</h1>
+                <h3 className='pb-5 my-5'>El numero de tu orden es {orderId}</h3>
                 <Link to={`/`} style={{textDecoration: 'none'}}>
                     <button type="button" className="btn btn-dark">Volver al home</button>
                 </Link>

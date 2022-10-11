@@ -22,12 +22,8 @@ import Swal from 'sweetalert2';
             .email('Invalid email address')
             .required('Email requerido'),
        })}
-       onSubmit={(values, { setSubmitting }) => {
+       onSubmit={(values) => {
         submitHandler(values);
-         setTimeout(() => {
-           alert(JSON.stringify(values, null, 2));
-           setSubmitting(false);
-         }, 400);
        }}
      >
        <Form className='m-5'>

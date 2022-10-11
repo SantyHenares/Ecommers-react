@@ -11,13 +11,13 @@ function NavBar() {
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <img src={logo} className="banner-logo" alt="logo" /> 
                     <ul className="navbar-nav">
-                        <li className="nav-item">
-                            <Link className="nav-link active" aria-current="page" to={`/`}>Home</Link>
+                        <li className="nav-item px-3">
+                            <Link className="nav-link active" aria-current="page" to={`/`}>Inicio</Link>
                         </li>
-                        <li className="nav-item">
+                        <li className="nav-item px-3">
                             <Link className="nav-link active" to={`/category/white`}>Remeras blancas</Link>
                         </li>
-                        <li className="nav-item">
+                        <li className="nav-item px-3">
                             <Link className="nav-link active" to={`/category/black`}>Remeras negras</Link>
                         </li>
                     </ul>
