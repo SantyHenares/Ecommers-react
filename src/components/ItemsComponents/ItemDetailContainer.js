@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import ItemDetail from './ItemDetail';
-import Spinner from './Spinner';
+import Spinner from '../Spinner/Spinner';
 import './Item.css';
 import { useParams } from 'react-router';
 import { doc, getFirestore, getDoc } from "firebase/firestore";

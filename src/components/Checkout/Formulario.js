@@ -8,24 +8,19 @@ import Swal from 'sweetalert2';
  const Formulario = ( {submitHandler} ) => {
   const { clear } = useCartContext();
 
-  const exito = () => {
-    Swal.fire(
-      'Felicitaciones',
-      'Su compra fue un exiro!',
-      'success'
-    ).then( clear() )
-  }
    return (
      <Formik
        initialValues={{ name: '', phone: '', email: '' }}
        validationSchema={Yup.object({
          name: Yup.string()
-           .max(15, 'Must be 15 characters or less')
-           .required('Required'),
-         phone: Yup.string()
-           .max(20, 'Must be 20 characters or less')
-           .required('Required'),
-         email: Yup.string().email('Invalid email address').required('Required'),
+            .max(15, 'Must be 15 characters or less')
+            .required('Nombre requerido'),
+         phone: Yup.number()
+            .typeError('Solo caracteres numericos')
+            .required('Telefono requerido'),
+         email: Yup.string()
+            .email('Invalid email address')
+            .required('Email requerido'),
        })}
        onSubmit={(values, { setSubmitting }) => {
         submitHandler(values);
@@ -53,7 +48,7 @@ import Swal from 'sweetalert2';
             <ErrorMessage name="email" />
         </div>
          
-        <button type='submit'  onClick={() => exito()} className='btn btn-dark m-2'>Finalizar compra</button>
+        <button type='submit' className='btn btn-dark m-2'>Finalizar compra</button>
        </Form>
      </Formik>
    );

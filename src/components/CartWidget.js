@@ -1,6 +1,6 @@
 import React from 'react';
 import carrito from '../assets/carrito.png';
-import './NavBar.css';
+import './NavBar/NavBar.css';
 import { useCartContext } from '../context/CartContext';
 
 const CartWidget = () => {
