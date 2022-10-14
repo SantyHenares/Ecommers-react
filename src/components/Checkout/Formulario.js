@@ -2,12 +2,8 @@ import React from 'react';
 import './Checkout.css';
 import { Formik, Form, ErrorMessage, Field } from 'formik';
 import * as Yup from 'yup';
-import { useCartContext } from '../../context/CartContext';
-import Swal from 'sweetalert2';
  
  const Formulario = ( {submitHandler} ) => {
-  const { clear } = useCartContext();
-
    return (
      <Formik
        initialValues={{ name: '', phone: '', email: '' }}

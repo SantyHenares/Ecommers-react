@@ -45,8 +45,8 @@ const ItemListContainer = (prop) => {
   return (
     <div>
     <h1>Prendas personalizadas hechas a mano</h1>
-    {categoryid == "black" ? <h3>Remeras Negras</h3> : null}
-    {categoryid == "white" ? <h3>Remeras Blancas</h3> : null}
+    {categoryid === "black" ? <h3>Remeras Negras</h3> : null}
+    {categoryid ==="white" ? <h3>Remeras Blancas</h3> : null}
     <ItemList items={items}/> 
     </div>
   )
